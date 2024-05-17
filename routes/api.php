@@ -3,6 +3,7 @@
 use App\Http\Controllers\UserloginController as ulogin;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\NotesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +21,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::post('/logincek',[ulogin::class,'belajarlogin']);
+Route::apiResource('notes',NotesController::class);
