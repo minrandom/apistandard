@@ -65,6 +65,9 @@ class NotesController extends Controller
     public function update(Request $request, notes $notes)
     {
         //
+        return response()->json(['success'=>true,'notes'=>$notes]);
+
+        
     }
 
     /**
