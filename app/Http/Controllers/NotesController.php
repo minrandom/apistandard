@@ -42,9 +42,12 @@ class NotesController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(notes $notes)
+    public function show($id)
     {
-        //
+            //
+        
+        $notes = notes::where('id',$id)->first();
+
         return response()->json(['success'=>true,'notes'=>$notes]);
     }
 
