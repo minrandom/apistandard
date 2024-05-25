@@ -82,7 +82,7 @@ class NotesController extends Controller
         ]);
         // Return a response
        
-        return response()->json(['success'=>true,'notes'=>$notes]);
+        return response()->json(['success'=>true,'notes'=>$id]);
 
         
     }
