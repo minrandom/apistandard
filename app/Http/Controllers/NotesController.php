@@ -70,11 +70,16 @@ class NotesController extends Controller
             'content' => 'required|string',
         ]);
 
-        // Update the note with the new data
-        $notes->title = $request->input('title');
-        $notes->content = $request->input('content');
-        $notes->save();
+        $id= $notes->id;
 
+        // Update the note with the new data
+        //$notes->title = $request->input('title');
+        //$notes->content = $request->input('content');
+        //$notes->save();
+        $notes->update([
+            'title'=>$request->title,
+            'content'=>$request->content,
+        ]);
         // Return a response
        
         return response()->json(['success'=>true,'notes'=>$notes]);
