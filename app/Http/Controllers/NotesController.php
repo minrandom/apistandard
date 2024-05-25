@@ -64,8 +64,20 @@ class NotesController extends Controller
      */
     public function update(Request $request, notes $notes)
     {
-        //
-        return response()->json(['success'=>true,'notes'=>$notes,'data'=>$request]);
+        // Validate the incoming request data
+        $request->validate([
+            'title' => 'required|string|max:255',
+            'content' => 'required|string',
+        ]);
+
+        // Update the note with the new data
+        $notes->title = $request->input('title');
+        $notes->content = $request->input('content');
+       // $notes->save();
+
+        // Return a response
+       
+        return response()->json(['success'=>true,'notes'=>$notes]);
 
         
     }
