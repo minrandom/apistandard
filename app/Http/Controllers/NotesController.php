@@ -62,15 +62,16 @@ class NotesController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, notes $notes)
+    public function update($id,Request $request)
     {
+        $notes = notes::where('id',$id)->first();
         // Validate the incoming request data
         $request->validate([
             'title' => 'required|string|max:255',
             'content' => 'required|string',
         ]);
 
-        $id= $notes->title;
+        
 
         // Update the note with the new data
         //$notes->title = $request->input('title');
