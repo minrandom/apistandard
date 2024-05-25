@@ -73,7 +73,7 @@ class NotesController extends Controller
         // Update the note with the new data
         $notes->title = $request->input('title');
         $notes->content = $request->input('content');
-       // $notes->save();
+        $notes->save();
 
         // Return a response
        
