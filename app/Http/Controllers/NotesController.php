@@ -70,7 +70,7 @@ class NotesController extends Controller
             'content' => 'required|string',
         ]);
 
-        $id= $notes->id;
+        $id= $notes->title;
 
         // Update the note with the new data
         //$notes->title = $request->input('title');
