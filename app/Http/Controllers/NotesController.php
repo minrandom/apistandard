@@ -35,7 +35,7 @@ class NotesController extends Controller
         //
        
     $create= Notes::create($request->all());
-        return response()->json(['success'=>true,'notes' => $create]);
+        return response()->json(['success'=>true,'notes' => $request]);
         
     }
 

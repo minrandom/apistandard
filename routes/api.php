@@ -22,3 +22,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::post('/logincek',[ulogin::class,'belajarlogin']);
 Route::apiResource('notes',NotesController::class);
+Route::post('/note/{id}',[NotesController::class,"update"]);
